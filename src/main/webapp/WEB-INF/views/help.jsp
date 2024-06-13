@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page isELIgnored="false"%>
+<!-- by default it is true, so it is set as false to use jsp -->
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +12,22 @@
 <title>Model and View</title>
 </head>
 <body>
-	<h1>Hey, this is help page</h1>
-
 	<%
-		String name = (String)request.getAttribute("name");
-		Integer rollNo = (Integer)request.getAttribute("roll no");
+	/* String name = (String)request.getAttribute("name");
+	Integer rollNo = (Integer)request.getAttribute("roll no"); */
 	%>
 
 	<h1>
-		My name is
-		<%=name %>
-		and my roll no is
-		<%=rollNo %>
+		My name is ${name}
+		<%-- <%=name %> --%>
+		and my roll no is ${roll_no}
+		<%-- <%=rollNo %> --%>
 	</h1>
+
+	<hr>
+
+	<c:forEach var="item" items="${marks }">
+		<h1>${item }</h1>
+	</c:forEach>
 </body>
 </html>

@@ -54,7 +54,15 @@ public class HomeController {
 		
 		/* setting the data */
 		modelAndView.addObject("name", "havoc");
-		modelAndView.addObject("roll no", 715);
+		modelAndView.addObject("roll_no", 715);
+		
+		// marks
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		
+		modelAndView.addObject("marks", list);
 		
 		/* setting the view name */
 		modelAndView.setViewName("help");
