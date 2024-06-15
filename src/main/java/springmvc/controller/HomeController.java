@@ -6,9 +6,11 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = "/controller")
 public class HomeController {
 	@RequestMapping(value = "/")
 	public String homePage() 
@@ -17,7 +19,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/home")
+	@RequestMapping(path = "/home", method=RequestMethod.GET)
 	public String home(Model model) 
 	{
 		System.out.println("this is home url");
