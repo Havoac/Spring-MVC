@@ -35,6 +35,12 @@ public class ContactContoller {
 //		user.setPassword(userPassword);
 		
 		System.out.println(user);
+		
+		if(user.getUserName().isBlank())
+		{
+			return "redirect:/contact";
+		}
+		
 		this.userService.createUser(user);
 		
 //		model.addAttribute("name", userName);
