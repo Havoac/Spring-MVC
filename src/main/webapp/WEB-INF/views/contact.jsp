@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@page isELIgnored="false"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +22,17 @@
 <body>
 	<div class="container mt-5">
 		<h3 class="text-center">${Header}</h3>
+		
+		<div class="alert alert-danger" role="alert">
+			<form:errors path="user.*" />
+		</div>
+		
 		<form action="processform" method="post">
+			<div class="form-group">
+				<label for="userId">User Id</label> <input type="text"
+					class="form-control" name="userId">
+			</div>
+
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label> <input
 					type="email" class="form-control" id="exampleInputEmail1"

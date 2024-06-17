@@ -13,6 +13,8 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	private int userId;
+	
 	private String email, userName, password;
 
 	public String getEmail() {
@@ -39,10 +41,20 @@ public class User {
 		this.password = password;
 	}
 
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
-		return "User [email=" + email + ", userName=" + userName + ", password=" + password + "]";
+		return "User [userId=" + userId + ", email=" + email + ", userName=" + userName + ", password=" + password
+				+ "]";
 	}
+
 	
 	
 	
