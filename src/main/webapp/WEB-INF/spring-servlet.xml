@@ -24,6 +24,10 @@
 		start with -->
 		<property name="suffix" value=".jsp" />		<!-- will end with -->
 	</bean>
+	
+	<!-- configuring multipart resolver -->
+	<bean name="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 	<!-- Data Source Configuration -->
 	<bean id="ds"
