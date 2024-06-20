@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,6 +17,12 @@ public class ContactContoller {
 	@Autowired
 	private UserService userService;
 
+	@RequestMapping("/user/{userId}/{userName}")
+	public String getDetail(@PathVariable("userId") int user_Id, @PathVariable("userName") String user_Name) {
+		System.out.println(user_Id + ", " + user_Name);
+		return "about";
+	}
+	
 	@ModelAttribute
 	public void ShowHeader(Model model, String heading) { // if we use the function name as "commonDataForModel" then it
 															// will automatically be called. No need to call this
