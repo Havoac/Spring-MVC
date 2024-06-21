@@ -24,7 +24,14 @@
 		start with -->
 		<property name="suffix" value=".jsp" />		<!-- will end with -->
 	</bean>
-	
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="springmvc.interceptor.MyInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<!-- configuring multipart resolver -->
 	<bean name="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />

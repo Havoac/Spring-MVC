@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class MyExceptionHandler {
 
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler({ Exception.class })
+	@ExceptionHandler({ NullPointerException.class })
 	public String ExceptionHandlerNull(Model m) {
 		m.addAttribute("msg", "Null pointer exception has occured");
 		return "null_page";
 	}
-
-	/* Generalized */
+//
+//	/* Generalized */
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler({ Exception.class })
 	public String GeneralizedExceptionHandler(Model m) {

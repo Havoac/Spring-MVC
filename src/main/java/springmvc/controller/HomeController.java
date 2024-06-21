@@ -42,8 +42,8 @@ public class HomeController {
 	public String about() {
 		System.out.println("this is about url");
 
-		String str = null;
-		System.out.println(str.length());
+//		String str = null;
+//		System.out.println(str.length());
 
 		return "about";
 	}
