@@ -17,6 +17,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class FileUploadController {
 	@RequestMapping("/fileform")
 	public String ShowUploadForm() {
+		String str = null;
+		System.out.println(str.charAt(0));
+
 		return "fileform";
 	}
 

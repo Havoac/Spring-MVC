@@ -74,15 +74,4 @@ public class HomeController {
 
 		return modelAndView;
 	}
-
-	/* Handling exception */
-	/* we can make multiple function for different kind of exceptions */
-	
-	/* used to indicate the HTTP status code that should be returned */
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler({ NullPointerException.class })
-	public String ExceptionHandlerNull(Model m) {
-		m.addAttribute("msg", "Null pointer exception");
-		return "null_page";
-	}
 }
